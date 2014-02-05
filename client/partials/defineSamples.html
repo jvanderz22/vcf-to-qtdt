@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Define Samples</title>
+</head>
+<body style="height:100%; min-height:100%;">
+	<ul class="breadcrumb">
+		<li class="active">Upload VCF<span class="divider">/</span></li>
+		<li>Define Samples</li>
+    </ul>
+    <h2>Define Sample Data</h2>
+
+    <div class="row-fluid">
+    	<div class="span8">
+			<h4> Either define with a file or fill in all the information below </h4>
+		</div>
+		<div class="span4">
+			<input type="file" ng-file-select="submitAsFile($files)">
+		</div>
+	</div>
+	<div>
+		<h6 class="alert alert-info"> To upload this information with a file, the program expects the same number of lines
+			as there are samples defined within the VCF file and with the same sample names. Each line
+			should define one sample with the following format: SAMPLE_ID FAMILY_ID FATHER_ID MOTHER_ID
+			SEX PHENOTYPE. A single blank line should also be included after all samples are defined. Otherwise,
+			fill in every row in the table below and click submit.
+		</h6>
+	</div>
+
+	<div style="font-size:small;"data-ng-repeat="sample in sampleData">
+		<table>
+			<tr>
+				<th> Sample ID:&nbsp;</th> 
+				<td> {{sample.Name}} &nbsp;&nbsp;</td>
+
+				<th> Family ID:&nbsp;</th> 
+				<td> <input type="text" ng-model="sample.FamilyId" style="width:48px;font-size:small;">&nbsp;&nbsp;</td>
+				
+				<th> Mother:&nbsp;</th>
+				<td> <input type="text" ng-model="sample.Mother" style="width:68px;font-size:small;">&nbsp;&nbsp;</td>
+
+				<th> Father:&nbsp;</th>
+				<td> <input type="text" ng-model="sample.Father" style="width:68px;font-size:small;">&nbsp;&nbsp;</td>
+				
+				<th> Sex:&nbsp;</th>
+				<td> 
+					<input type="text" ng-model="sample.Sex" style="width:15px;font-size:small;">&nbsp;&nbsp;</td>
+					<!--<select ng-model="sample.Sex" style="width:45px">
+						<option value = "0"> 0 </option>
+						<option value = "1"> 1 </option>
+					</select>-->
+					&nbsp;&nbsp;
+				</td>
+				
+				<th> Phenotype: </th>
+				<td> <input type="text" ng-model="sample.Phenotype" style="width:48px;font-size:small;"> </td>
+			</tr>
+		</table>
+	</div>
+	<input type="submit" ng-click="submitSamples()" value="Submit">
+	<!--<div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class"
+	ng-show="dropSupported">drop files here</div>
+<div ng-file-drop-available="dropSupported=true" 
+		ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
+<button ng-click="upload.abort()">Cancel Upload</button>-->
+
+	<!--<form id="uploadForm"
+	      enctype="multipart/form-data"
+	      action="/upload"
+	      method="post">
+	  <input type="file"/>
+	  <input type="submit" value="Submit">
+	</form>
+
+	<span id="status" />
+	<img id="uploadedImage" />-->
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Example File</title>
+	</head>
+	<body>
+		
+		<h3> VCF Input Format </h3>
+			<p> This program takes a file in VCF format and reads the names of all samples named in the file. Any line that begins with ## is a descriptor of the file and is not considered by the program. After these lines, a single line beginning with must be included. This line should contain the following: #CHROM POS ID REF ALT QUAL FILTER INFO FORMAT SAMPLE_X SAMPLE_Y SAMPLE_Z. This line should contain however many samples that are being described by the file. Each subsequent line should contain the information describiing a genetic marker and each sample's genotype at that marker. 
+			</p>
+		<h3> Input Sample Data </h3>
+			<p> This program requires the user to input extra data about the samples also. This information can either be entered by hand within the second step of the program or a file can be submitted which will automate the process. If a file is submitted, it should have the same number of lines as there are
+			samples within the VCF file, with each line corresponding to a sample. Each line should contain the following: SAMPLE_ID FAMILY_ID FATHER_ID MOTHER_ID
+			SEX PHENOTYPE. At the end of the file, an empty line is expected to denote that there are no more samples. 
+			</p>
+
+		---------------------------------------
+
+		<h4> Sample VCF Format</h4>
+
+		<p style="font-size:small;">
+			#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NA12878	NA12891	NA12892</br>
+1	72701	P2_M_061510_1_472	A	&lt;DEL&gt;	.	.	CIEND=-780,1120;CIPOS=-1151,949;END=81530;IMPRECISE;SVLEN=-8829;SVTYPE=DEL;VALIDATED;DBVARID=esv19430;VALMETHOD=CGH;SVMETHOD=RD	GT:GQ:GL:FT	1/1:6:-2.11,-0.73,-0.09:LowQual	1/1:10:-2.88,-1.13,-0.03:LowQual	0/1:11:-1.14,-0.03,-1000.00:LowQual</br>
+1	226919	P2_M_061510_1_786	C	&lt;DEL&gt;	.	.	CIEND=-1580,120;CIPOS=-111,1989;END=511377;IMPRECISE;SVLEN=-284458;SVTYPE=DEL;VALIDATED;DBVARID=nsv10050;VALMETHOD=CGH;SVMETHOD=RP	GT:GQ:GL:FT	1/1:99:-1000.00,-1000.00,0.00:PASS	1/1:99:-1000.00,-1000.00,0.00:PASS	1/1:99:-1000.00,-1000.00,0.00:PASS</br>
+1	978435	P2_M_061510_1_847	GGTGTCTGCACGTGGGTGTCTGCATGTGGGTGTCTGTGCCCTCAAGTGTCTC	G	.	.	BKPTID=P2_PM_1_2304;END=978486;HOMLEN=23;HOMSEQ=GTGTCTGCACGTGGGTGTCTGCA;SVLEN=-51;SVTYPE=DEL;VALIDATED;NOVEL;VALMETHOD=ASM;SVMETHOD=SR	GT:GQ:GL:FT	0/0:99:0.00,-1000.00,-1000.00:PASS	0/0:99:0.00,-1000.00,-1000.00:PASS	0/0:99:0.00,-1000.00,-1000.00:PASS</br>
+		</p>
+
+		<a download="sampleVCF.vcf" href= "sample/sampleVCF.vcf">Download Example VCF File</a> </br>
+
+
+		--------------------------------------
+		<h4> Sample Input Format </h4>
+		<p style="font-size:small;">
+			1454	NA12813	0	0	2	1</br>
+			1456	NA12828	0	0	2	2</br>
+			1463	NA12878	NA12891	NA12892	2	1</br>
+
+		</p>
+
+		<a download="sampleInput.txt" href="sample/sampleInput.txt"> Download Example Input File</a>
+
+
+
+
+	</body>
+</html>

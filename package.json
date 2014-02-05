@@ -1,0 +1,34 @@
+{
+  "name": "vcf-to-pedigrees-converter",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "3.4.4",
+    "colors": "0.6.2",
+    "lazy": "1.0.11",
+    "multiparty": "3.1.0",
+    "reload": "0.1.0",
+    "sys": "0.0.1",
+    "url": "0.7.9",
+    "node-uuid": "1.4.1"
+  },
+  "engines": {
+    "node": "0.10.18",
+    "npm": "1.3.8"
+  },
+  "description": "Converts VCF files to a usable format for pedigree analysis",
+  "main": "writeFile.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "VCF",
+    "converter",
+    "pedigree",
+    "analysis",
+    "file",
+    "converter"
+  ],
+  "author": "Jordan VanderZwaag",
+  "license": "BSD-2-Clause"
+}

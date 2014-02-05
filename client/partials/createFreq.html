@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Creatae Frequency</title>
+	</head>
+	<body>
+		
+		<ul class="breadcrumb">
+			<li class="active">Upload VCF</a> <span class="divider">/</span></li>
+			<li class="active">Define Samples <span class="divider">/</span></li>
+			<li class="active">Download Files <span class="divider">/</span></li>
+			<li>Define Frequencies</li>
+		</ul>
+
+		<h2> Fill in the Frequency of Each Allele Below to Generate a Frequency File </h2>
+		<div ng-repeat = "marker in uploadMarkers">
+			<table>
+				<tr> 
+					<h3> <th> Marker ID: </th> </h3>
+					<td> {{marker.markerID}} </td>
+				</tr>
+				<tr style="font-size:small; margin-left:15px;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th style="font-size:small;"> Reference Allele Frequency: &nbsp;</th>
+					<td style="font-size:small"> <input  type="text" style="font-size:small;width:48px;height:20px;" ng-model="marker.refFreq"> </td>
+				</tr>
+
+				<tr style="font-size:small; margin:5px;" ng-repeat = "allele in marker.alleles">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<th style="font-size:small;"> Alternate Allele {{$index+1}} Frequency: &nbsp;</th>
+					<td style="font-size:small"> <input type="text" style="font-size:small;width:48px;height:20px;" ng-model="allele.freq"> </td>
+				</tr>
+			</table>
+
+		</div>
+
+		<input type="submit" ng-click="submitFrequencies()" value="Submit Frequencies">
+
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Upload Files</title>
+	</head>
+	<body>
+		<ul class="breadcrumb">
+			<li class="active">Upload VCF</li>
+			
+		</ul>
+
+		<div class="row-fluid">
+			<div class="span6">
+	
+	<!--<input type="text" ng-model="myModelObj">-->
+				<h4> Select VCF File to Upload </h4>
+				<input type="file" ng-file-select="onFileSelect($files)">
+			</div>
+			<div class="span6">
+				<h2> About The Program </h2>
+				<p> This program takes a VCF file and converts it into a set of three files usable by Pedigree Analysis programs such as <a href="http://www.sph.umich.edu/csg/abecasis/merlin/index.html">Merlin</a>. To start, select a VCF file to upload. For an example of a valid, go the example tab <a href="#/fileExample"> here </a>. The next step is to fill the information for each sample ID. This includes the Family ID, the name of the sample's mother and father within the sample, the sex of the person (1 for male or 2 for female), and the person's phenotype for the selected trait (1 for unaffected, 2 for affected, or 0 if the phenotype is unknown). This information may be entered manually on the next page or submitted as a file.After this information is entered and submitted the ouput can be downloaded on the next page. </p> 
+
+
+				<h2> Program Output </h2>
+				<p> The program outputs files in QTDT format with three seperate output files: a pedigree file, a map file, and a data file. The pedigree file consists of information about each individual and their genotype at each marker. The data file lists all markers in the VCF file and the map file lists the location of each of the markers. <a href="http://www.sph.umich.edu/csg/abecasis/merlin/tour/input_files.html">This</a> page gives a more complete explanation of these files.</p>
+			</div>
+		</div>
+
+	
+	<!--<div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="optional-css-class"
+	ng-show="dropSupported">drop files here</div>
+<div ng-file-drop-available="dropSupported=true" 
+		ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
+<button ng-click="upload.abort()">Cancel Upload</button>-->
+
+	<!--<form id="uploadForm"
+	      enctype="multipart/form-data"
+	      action="/upload"
+	      method="post">
+	  <input type="file"/>
+	  <input type="submit" value="Submit">
+	</form>
+
+	<span id="status" />
+	<img id="uploadedImage" />-->
+
+
+	</body>
+</html>
